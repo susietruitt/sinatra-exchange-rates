@@ -1,7 +1,8 @@
 require "sinatra"
 require "sinatra/reloader"
+@er_key = ENV.fetch("ERKEY")
 
-api_url = "https://api.exchangerate.host/list?access_key=#{ENV["ERKEY"]}"
+#api_url = "https://api.exchangerate.host/list?access_key=#{ENV["ERKEY"]}"
 
 get("/") do
   "
