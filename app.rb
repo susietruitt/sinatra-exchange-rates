@@ -19,7 +19,7 @@ get("/") do
 
 end
 
-get("/dynamic/:currency_one") do
+get("/:currency_one") do
   @er_key = ENV.fetch("ERKEY")
   @api_url = "https://api.exchangerate.host/list?access_key=#{@er_key}"
   @raw_er_data = HTTP.get(@api_url)
@@ -31,7 +31,7 @@ get("/dynamic/:currency_one") do
   erb(:c_one)
 end
 
-get("/dynamic/:currency_one/:currency_two") do
+get("/:currency_one/:currency_two") do
   @er_key = ENV.fetch("ERKEY")
   @api_url = "https://api.exchangerate.host/list?access_key=#{@er_key}"
   @raw_er_data = HTTP.get(@api_url)
@@ -41,6 +41,7 @@ get("/dynamic/:currency_one/:currency_two") do
   @currencies_keys = @currencies_array.keys
   @currency_one = params.fetch("currency_one")
   @currency_two = params.fetch("currency_two")
+
 
   @conversion_url="https://api.exchangerate.host/convert?access_key=#{@er_key}&from=#{@currency_one}&to=#{@currency_two}&amount=1"
   @raw_convert_data = HTTP.get(@conversion_url)

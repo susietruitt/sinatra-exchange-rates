@@ -2,6 +2,6 @@
 <p><%@currencies_keys%></p>
 <ul>
   <% @currencies_keys.each do |key| %>
-    <li><a href="/dynamic/<%= key %>">Convert 1 <%= key %> to...</a></li>
+    <li><a href="/<%= key %>">Convert 1 <%= key %> to...</a></li>
   <% end %>
 </ul>
