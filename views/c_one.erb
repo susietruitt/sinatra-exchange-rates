@@ -1,0 +1,8 @@
+<h1>Convert <%= @currency_one.upcase %></h1>
+<p>Go <a href="/">back</a>.</p>
+
+<ul>
+  <% @currencies_keys.each do |key| %>
+    <li><a href="/dynamic/<%= @currency_one %>/<%= key %>">Convert 1 <%= @currency_one %> to <%= key %></a></li>
+  <% end %>
+</ul>

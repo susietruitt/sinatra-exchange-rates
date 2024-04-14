@@ -1,7 +1,7 @@
 <h1>Currency pairs</h1>
-
+<p><%@currencies_keys%></p>
 <ul>
-    <% @currencies_keys.each do |key| %>
-      <li>Convert 1 <%= key %> to...</li>
-    <% end %>
-  </ul>
+  <% @currencies_keys.each do |key| %>
+    <li><a href="/dynamic/<%= key %>">Convert 1 <%= key %> to...</a></li>
+  <% end %>
+</ul>
